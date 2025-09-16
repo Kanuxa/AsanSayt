@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+button,
+a {
+  cursor: pointer;
+}
+
+@theme {
+  --color-primary: #1d4ed8; /* Blue-700 */
+  --color-primary-light: #dbeafe; /* Blue-100 */
+  --color-secondary: #10b981; /* Emerald-500 */
+  --color-secondary-light: #d1fae5; /* Light Mint */
+  --color-dark: #030a1f; /* darker cosmic background */
+  --color-dark-light: #05142d; /* slightly lighter for gradients/overlays */
+}
+
+@keyframes flyStars {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(50px, -50px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50px, 50px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
